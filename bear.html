@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        bear page
+    </title>
+</head>
+
+<body>
+
+    <h2>Vinay Kumar Paspula builds a bear</h2>
+
+    <form>
+        <input type="checkbox" id="hat" name="hat" value="hat">
+        <label for="hat">hat</label></br>
+
+        <input type="checkbox" id="scarf" name="scarf" value="scarf">
+        <label for="scarf">scarf</label></br>
+
+        <input class="form-check-input" type="checkbox" id="shirt" name="shirt" value="shirt">
+        <label class="form-check-label" for="shirt">shirt</label></br>
+
+
+        </br>
+        <input type="button" onclick="startbear()" value="Start a bear">
+    </form>
+   
+    <p id="result">This result will be displayed here</p>
+
+    <script>
+        var my_bear = {};
+        function startbear() {
+            my_bear = {};
+
+            if (document.getElementById("hat").checked) {
+                my_bear["hat"] = true;
+            } else {
+                my_bear["hat"] = false;
+            }
+            if (document.getElementById("scarf").checked) {
+                my_bear["scarf"] = true;
+            } else {
+                my_bear["scarf"] = false;
+            }
+            if (document.getElementById("shirt").checked) {
+                my_bear["shirt"] = true;
+            } else {
+                my_bear["shirt"] = false;
+            }
+
+            out = document.getElementById("result")
+            my_bear = JSON.stringify(my_bear);
+            out.innerHTML = my_bear
+            my_bear = JSON.parse(my_bear)
+        }
+
+
+    </script>
+
+</body>
+
+</html>
