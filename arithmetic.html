@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Arithmetic page
+    </title>
+
+</head>
+
+<body>
+
+    <h2>Vinay Kumar Paspula computes</h2>
+
+    <form>
+
+        <label for="first_num">Enter a number</label>
+        <input type="number" id="first_num" name="first_num" value=10> <br>
+
+        <label for="second_num">Enter a number</label>
+        <input type="number" class="form-control" id="second_num" name="second_num" value=2> <br>
+        <input type="button" class="btn btn-primary" onclick="permutations()" value="Compute">
+    </form>
+
+
+    </br>
+    <p id="result">The result will be displayed here</p>
+
+
+
+
+    <script>
+
+        function permutations() {
+            fnum = document.getElementById("first_num").value
+            snum = document.getElementById("second_num").value
+            var product = 1;
+
+            let i = fnum;
+
+            do {
+                product *= i;
+                i--
+            } while (i >= (fnum - snum + 1))
+
+
+            out = document.getElementById("result")
+            out.innerHTML = fnum + " permute " + snum + " is " + product
+        }
+
+
+    </script>
+
+</body>
+
+</html>
