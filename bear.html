@@ -9,7 +9,7 @@
 
 <body>
 
-    <h2>Vinay Kumar Paspula builds a bear</h2>
+    <h2>Sai Vivek Tadiparthi builds a bear</h2>
 
     <form>
         <input type="checkbox" id="hat" name="hat" value="hat">
@@ -25,7 +25,22 @@
         </br>
         <input type="button" onclick="startbear()" value="Start a bear">
     </form>
-   
+    </br>
+    <form>
+
+        <label for="property">Enter a property</label></br>
+        <input type="text" id="property" name="property" value="color">
+        </br>
+
+        <label for="value">Enter a value</label></br>
+        <input type="text" id="value" name="value">
+        </br>
+
+        <input type="button" class="btn btn-primary" onclick="updatebear()" value="Update the bear">
+
+    </form>
+    </br>
+
     <p id="result">This result will be displayed here</p>
 
     <script>
@@ -56,6 +71,17 @@
         }
 
 
+        function updatebear() {
+            var pro = document.getElementById("property").value;
+            var values = document.getElementById("value").value;
+            my_bear[pro] = values;
+
+            out = document.getElementById("result")
+            my_bear = JSON.stringify(my_bear);
+            out.innerHTML = my_bear
+            my_bear = JSON.parse(my_bear)
+
+        }
     </script>
 
 </body>
